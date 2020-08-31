@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const globImporter = require('node-sass-glob-importer');
 // const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 var config = {
@@ -31,7 +32,17 @@ var config = {
       //style and css extract
       {
         test: [/.css$|.scss$/],
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              importer: globImporter()
+            }
+          }
+        ]
       }
     ]
   },

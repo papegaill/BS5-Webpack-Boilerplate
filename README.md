@@ -6,6 +6,7 @@ A [Webpack 4](https://webpack.js.org/) boilerplate with build-in:
 - CSS extraction into a single file using [style-loader](https://github.com/webpack-contrib/style-loader), [css-loader](https://github.com/webpack-contrib/css-loader) and [css-mini-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) 
 - SCSS support using [sass-loader](https://github.com/webpack-contrib/sass-loader) and [node-sass](https://github.com/sass/node-sass).
 - Optimization/Minification with [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin) and [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin). 
+- Importing Sass files using glob patterns [node-sass-glob-importer](https://github.com/maoberlehner/node-sass-magic-importer/tree/master/packages/node-sass-glob-importer)
 - [Bootstrap](https://getbootstrap.com/) SCSS and [Fontawesome](https://fontawesome.com) local fonts support
 - Use aliases for easy imports
 - [BrowserSync](https://www.browsersync.io/) integration
@@ -19,6 +20,7 @@ Project
 │   README.md
 │   package.json
 │   webpack.config.js
+│
 └───src
 │   │
 │   └───assets
@@ -62,4 +64,12 @@ mkdir myNewProject && cd myNewProject
 clone https://github.com/papegaill/BS5-Webpack-Boilerplate
 npm i
 npm run dev
+```
+
+### Sass Globbing
+
+Import all files inside a specific directory and subdirectories using glob patterns:
+```
+@import 'scss/**/*.scss';
+@import 'scss/component-*';
 ```
