@@ -1,17 +1,15 @@
 // Override Bootstrap
-// -----------------------------------------------------
-@import "bs_overrides";
-
-@import "./test/*.scss";
+// -----------------------------------------------------------------------------
+@import "base/variables";
 
 // Option 1
-// -----------------------------------------------------
+// -----------------------------------------------------------------------------
 // Import all of Bootstrap's CSS
 
 // @import "bootstrap/scss/bootstrap";
 
 // Option 2
-// -----------------------------------------------------
+// -----------------------------------------------------------------------------
 // Import just the styles you need. Note that some stylesheets are required no matter what.
 
 // Configuration
@@ -49,26 +47,36 @@
 @import "~bootstrap/scss/popover";
 @import "~bootstrap/scss/carousel";
 @import "~bootstrap/scss/spinners";
-
 // Helpers
 @import "~bootstrap/scss/helpers";
-
 // Utilities
 @import "~bootstrap/scss/utilities/api";
 
-// Fonts
-// -----------------------------------------------------
-
-@import "fonts";
-
-// Custom CSS
-// -----------------------------------------------------
+// Base
+// -----------------------------------------------------------------------------
 // Import all files inside a specific directory and subdirectories using glob patterns:
 // @import 'dir/**/*.scss';
 // @import 'dir/component-*';
 
-// Components
-// @import "components/*.scss";
+@import "base/fonts";
+@import "base/typography";
+@import "base/mixins";
+@import "base/functions";
+@import "base/helpers";
+@import "base/elements";
 
-// layouts
-// @import "layouts/*.scss";
+// Layout
+// -----------------------------------------------------------------------------
+@import "layout/page.header";
+@import "layout/page.content";
+@import "layout/page.footer";
+
+// Component
+// -----------------------------------------------------------------------------
+@import "components/node";
+
+// Other
+// -----------------------------------------------------------------------------
+@import "block/block";
+@import "content/node.page";
+@import "content/node.article";
